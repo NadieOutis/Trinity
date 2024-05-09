@@ -3,13 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Vista;
-
+import Modelo.LoginDao;
+import Modelo.Logins;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author ego
  */
 public class Login extends javax.swing.JFrame {
+    Logins lg = new Logins();
+    LoginDao login = new LoginDao();
 
     /**
      * Creates new form Login
@@ -17,6 +21,22 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         this.setLocationRelativeTo(null);
+    }
+     public void validar(){
+    String correo = txtCorreo.getText();
+    String password = String.valueOf(txtPassword.getPassword());
+        if(!"".equals(correo ) || !"".equals(password)){
+            
+            
+            lg = login.log(correo, password);
+            if(lg.getCorreo()!= null && lg.getPassword()!= null){
+                System sis = new System();
+                sis.setVisible(true);
+                dispose();
+            }else{
+                JOptionPane.showMessageDialog(null, "Contraseña o correo incorrecto");
+            }
+        }
     }
 
     /**
@@ -141,6 +161,7 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        validar();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
