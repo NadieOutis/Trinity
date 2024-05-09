@@ -16,9 +16,12 @@ public class ClienteDao {
     Connection con;
     PreparedStatement ps;
     
-    public boolean IngresarCliente(Client cl){
-    String sql = "INSERT INTO clientes (dni, nombre, direccion, numeroTelefonico) \n" +
-"VALUES (1, 12345678, 'Juan Perez', 'Calle Principal 123', 555123456);";
+    public boolean IngresarCliente(Cliente cl){
+    String sql = "INSERT INTO clientes (dni, nombre, direccion, numerotelefonico) " + "VALUES (?, ?, ?, ?);";
+    Try{
+        con = cn.getConnection();
+        ps =  con.prepar
+    }
 
         
         
