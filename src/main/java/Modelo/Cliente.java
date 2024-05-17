@@ -13,7 +13,7 @@ public class Cliente {
         private int dni;
         private String nombre;
         private String dirrecion;
-        private int numeroTelefonico;
+        private int numerotelefonico;
 
     public Cliente(){
         
@@ -24,7 +24,7 @@ public class Cliente {
         this.dni = dni;
         this.nombre = nombre;
         this.dirrecion = dirrecion;
-        this.numeroTelefonico = numeroTelefonico;
+        this.numerotelefonico = numeroTelefonico;
         
     }
 
@@ -44,8 +44,8 @@ public class Cliente {
         this.dirrecion = dirrecion;
     }
 
-    public void setNumeroTelefonico(int numeroTelefonico) {
-        this.numeroTelefonico = numeroTelefonico;
+    public void setNumeroTelefonico(int numerotelefonico) {
+        this.numerotelefonico = numerotelefonico;
     }
 
     public int getId() {
@@ -65,7 +65,7 @@ public class Cliente {
     }
 
     public int getNumeroTelefonico() {
-        return numeroTelefonico;
+        return numerotelefonico;
     }
     
 }
